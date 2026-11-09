@@ -2,7 +2,6 @@ numpy==1.23.5
 cython==0.29.37
 
 bertopic==0.17.3
-biterm==0.1.5
 clustpy==0.0.2
 datasets==2.21.0
 flask==2.3.3

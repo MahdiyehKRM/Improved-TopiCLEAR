@@ -202,8 +202,15 @@ class TopiCLEAR(TransformerMixin, ClusterMixin, BaseEstimator):
             embedding_model=None, embedding_batch_size: int = 64,
             embedding_device=None, embedding_show_progress_bar: bool = False):
 
+        self.n_clusters = n_clusters
+        self.n_dims = n_dims if n_dims is not None else n_clusters - 1
+        self.max_iter = max_iter
+        self.n_init = n_init
+        self.gmm_repetitions = gmm_repetitions
+        self.random_state = random_state
+        self.dim_preprocess = dim_preprocess
+        self.random_state_pca = random_state_pca
 
-        
         if input_type not in {"text", "embedding"}:
             raise ValueError("input_type must be 'text' or 'embedding'")
         self.input_type = input_type
@@ -212,6 +219,8 @@ class TopiCLEAR(TransformerMixin, ClusterMixin, BaseEstimator):
         self.embedding_batch_size = embedding_batch_size
         self.embedding_device = embedding_device
         self.embedding_show_progress_bar = embedding_show_progress_bar
+
+
     
     def _ensure_array(self, X: Sequence[Any] | np.ndarray) -> np.ndarray:
         if isinstance(X, np.ndarray):
