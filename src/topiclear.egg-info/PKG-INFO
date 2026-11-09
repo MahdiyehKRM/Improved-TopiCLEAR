@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: topiclear
+Version: 0.1.0
+Summary: TopiCLEAR: Topic extraction by CLustering Embeddings with Adaptive dimensional Reduction
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy<2,>=1.21
+Requires-Dist: scipy<2,>=1.9
+Requires-Dist: scikit-learn<2,>=1.2
+Requires-Dist: clustpy>=0.0.2
+Requires-Dist: sentence-transformers>=2.2.0
+Dynamic: license-file
+
+improving topiclear

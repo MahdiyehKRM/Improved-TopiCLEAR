@@ -1,0 +1,5 @@
+numpy<2,>=1.21
+scipy<2,>=1.9
+scikit-learn<2,>=1.2
+clustpy>=0.0.2
+sentence-transformers>=2.2.0

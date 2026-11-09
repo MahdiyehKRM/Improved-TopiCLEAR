@@ -1,6 +1,7 @@
 # The LDA-KMeans procedure in this module is adapted from ClustPy 0.0.2.
 # ClustPy is distributed under the BSD-3-Clause License; see
 # THIRD_PARTY_LICENSES/ClustPy-LICENSE.
+from __future__ import annotations
 
 from .topiclear import TopiCLEAR, _clustpy_update, _within_scatter_raw
 

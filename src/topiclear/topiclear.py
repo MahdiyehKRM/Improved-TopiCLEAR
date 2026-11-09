@@ -195,17 +195,14 @@ class TopiCLEAR(TransformerMixin, ClusterMixin, BaseEstimator):
     Proceedings of the 24th international conference on Machine learning. 2007.
     """
 
-    def __init__(self, n_clusters: int, n_dims: int = None, max_iter: int = 50, n_init: int = 1,
-                gmm_repetitions: int = 10, random_state: np.random.RandomState | int = None, dim_preprocess: int = 64, random_state_pca: int | None = 50,
-                input_type: str = "text", embedding_model_name: str = "sentence-transformers/all-MiniLM-L6-v2", embedding_model: Any | None = None, embedding_batch_size: int = 64, embedding_device: str | None = None, embedding_show_progress_bar: bool = False):
-        self.n_clusters = n_clusters
-        self.n_dims = n_clusters - 1 if n_dims is None else n_dims
-        self.max_iter = max_iter
-        self.n_init = n_init
-        self.gmm_repetitions = gmm_repetitions
-        self.random_state = random_state
-        self.dim_preprocess = dim_preprocess
-        self.random_state_pca = random_state_pca
+    def __init__(self, n_clusters: int, n_dims=None, max_iter: int = 50, n_init: int = 1,
+            gmm_repetitions: int = 10, random_state=None,
+            dim_preprocess: int = 64, random_state_pca=50,
+            input_type: str = "text", embedding_model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+            embedding_model=None, embedding_batch_size: int = 64,
+            embedding_device=None, embedding_show_progress_bar: bool = False):
+
+
         
         if input_type not in {"text", "embedding"}:
             raise ValueError("input_type must be 'text' or 'embedding'")
